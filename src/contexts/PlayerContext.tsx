@@ -16,7 +16,7 @@ interface PlayerContextData {
   isShuffling: boolean;
   hasPrevious: boolean;
   hasNext: boolean;
-  play: (episode: Episode) => void;
+  play: (episode: Episode) => void; //tipagem de função void, que nao retorna nada
   setPlayingState: (state: boolean) => void;
   togglePlay: () => void;
   toggleLoop: () => void;
