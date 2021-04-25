@@ -69,7 +69,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
         <ul>
           {latestEpisodes.map((episode, index) => {
             return (
-              <li key={episode.id}>
+              <li style={{ minWidth: "460px" }} key={episode.id}>
                 <div className={styles.latestEpisodesImage}>
                   <Image
                     width={192} //largura que ela está sendo importada, e não o que está sendo mostrada
@@ -117,7 +117,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             {allEpisodes.map((episode, index) => {
               return (
                 <tr key={episode.id}>
-                  <td style={{ width: 110 }}>
+                  <td style={{ minWidth: 110 }}>
                     <Image
                       width={120}
                       height={120}
@@ -127,28 +127,32 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                     />
 
                   </td>
-                  <td>
+                  <td style={{ minWidth: 110 }}>
                     <Link href={`/episodes/${episode.id}`}>
                       <a>{episode.title}</a>
                     </Link>
                   </td>
-                  <td>
+                  <td style={{ minWidth: 110 }}>
                     <a href="">{episode.members}</a>
                   </td>
-                  <td style={{ width: 110 }}>
+                  <td style={{ minWidth: 110 }}>
                     <a href="">{episode.publishedAt}</a>
                   </td>
-                  <td>
+                  <td style={{ minWidth: 110 }}>
                     <a href="">{episode.durationAsString}</a>
                   </td>
                   <td>
-                    <button type="button">
-                      <img
-                        src="/play-green.svg"
-                        alt="Tocar episódio"
-                        onClick={() => playList(episodeList, index + latestEpisodes.length)} //essa soma no final é para esses elementos ficarem com o index+2, levando em consideração que tem os dois primeiros que precisam estar ali dentro do array
-                      />
-                    </button>
+                    <a href="#player">
+                      <button type="button">
+                        <img
+                          src="/play-green.svg"
+                          alt="Tocar episódio"
+                          onClick={() => {
+                            playList(episodeList, index + latestEpisodes.length); //essa soma no final é para esses elementos ficarem com o index+2, levando em consideração que tem os dois primeiros que precisam estar ali dentro do array
+                          }}
+                        />
+                      </button>
+                    </a>
                   </td>
                 </tr>
               )

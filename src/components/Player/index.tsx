@@ -63,7 +63,7 @@ export default function Player() {
   const episode = episodeList[currentEpisodeIndex];
 
   return (
-    <div className={styles.playerContainer}>
+    <div id="#player" className={styles.playerContainer}>
       <header style={{ marginBottom: "1rem" }}>
         <img src="/playing.svg" alt="Tocando agora" />
         <strong>Tocando agora</strong>

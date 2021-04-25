@@ -2,6 +2,10 @@
   padding: 3rem 4rem;
   width: 26.5rem;
   height: 100vh;
+  @media (max-width: 1000px) {
+    height: 60vh;
+    width: 100vw;
+  }
   overflow-y: scroll;
 
   background: var(--purple-500);
@@ -37,6 +41,11 @@
 
   img {
     border-radius: 1.5rem;
+
+    @media (max-width: 1000) {
+      max-width: 50%;
+      max-height: 50%;
+    }
   }
 
   strong {

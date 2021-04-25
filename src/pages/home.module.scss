@@ -4,6 +4,10 @@
   width: calc(100vw - 26.5rem);
   overflow-y: scroll; //faz com que o scroll não inclua o header e a sidebar do podcast
 
+  @media (max-width: 1000px) {
+    width: 100vw;
+    // overflow-y: none;
+  }
   h2 {
     margin-top: 3rem;
     margin-bottom: 1.5rem;
@@ -16,6 +20,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+
+    @media (max-width: 1520px) {
+      display: flex;
+      flex-direction: column;
+    }
 
     li {
       background: var(--white);
